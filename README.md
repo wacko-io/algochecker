@@ -3,30 +3,35 @@
 
 Структура проекта
 
+```text
 algochecker/
-├── CMakeLists.txt # Скрипт сборки проекта
-├── README.md # Документация (этот файл)
-├── src/ # Исходные файлы (.cpp)
-│   ├── main.cpp # Точка входа (CLI и инициализация веб-сервера)
-│   ├── static_analyzer/ # Модуль статического анализа
+├── CMakeLists.txt                  # Скрипт сборки проекта
+├── README.md                       # Документация (этот файл)
+├── src/                            # Исходные файлы (.cpp)
+│   ├── main.cpp                    # Точка входа (CLI и инициализация веб-сервера)
+│   ├── static_analyzer/            # Модуль статического анализа
 │   │   ├── file_loader.cpp
 │   │   ├── lexer.cpp
 │   │   ├── parser.cpp
 │   │   └── complexity_evaluator.cpp
-│   ├── dynamic_analyzer/    # Модуль бенчмаркинга
+│   ├── dynamic_analyzer/           # Модуль бенчмаркинга
 │   │   ├── data_generator.cpp
 │   │   ├── benchmarker.cpp
 │   │   ├── exporter.cpp
 │   │   └── visualizer.cpp
-│   └── web_server/ # HTTP сервер для связи с фронтендом
+│   └── web_server/                 # HTTP сервер для связи с фронтендом
 │       └── server.cpp
-├── include/ # Заголовочные файлы (.h, .hpp) повторяют структуру src/
-├── web/ # Статические файлы для веб-интерфейса
-│   ├── index.html           
-│   ├── style.css            
-│   └── script.js            
-├── tests/ # Тестовые примеры кода для анализа (.txt, .cpp)
-└── scripts/ # Скрипты (.gp) для Gnuplot 
+├── include/                        # Заголовочные файлы (.h, .hpp), повторяют структуру src/
+│   ├── static_analyzer/
+│   ├── dynamic_analyzer/
+│   └── web_server/
+├── web/                            # Статические файлы для веб-интерфейса
+│   ├── index.html
+│   ├── style.css
+│   └── script.js
+├── tests/                          # Тестовые примеры кода для анализа (.txt, .cpp)
+└── scripts/                        # Скрипты (.gp) для Gnuplot
+```
 
 Распределение ролей и задач (План разработки)
 Этап 1: Проектирование и Базовый сетап
