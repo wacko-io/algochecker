@@ -21,4 +21,4 @@ bool generate_gnuplot_script(const std::string& data_path, const std::string& sc
     return true;
 }
 
-} // namespace algochecker::dynamic_analyzer
+}

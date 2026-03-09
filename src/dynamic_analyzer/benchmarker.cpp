@@ -6,4 +6,4 @@ long long benchmark_stub(const std::vector<int>& data) {
     return static_cast<long long>(data.size());
 }
 
-} // namespace algochecker::dynamic_analyzer
+}

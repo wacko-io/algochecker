@@ -18,4 +18,4 @@ bool export_measurements_csv(const std::string& output_path, const std::vector<l
     return true;
 }
 
-} // namespace algochecker::dynamic_analyzer
+}

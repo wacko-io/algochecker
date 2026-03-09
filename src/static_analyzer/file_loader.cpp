@@ -29,4 +29,4 @@ namespace algochecker::static_analyzer {
         return code;
     }
 
-} // namespace algochecker::static_analyzer
+}

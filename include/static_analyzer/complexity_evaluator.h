@@ -8,4 +8,4 @@ namespace algochecker::static_analyzer {
 
 std::string evaluate_complexity(const ParseResult& parse_result);
 
-} // namespace algochecker::static_analyzer
+}
