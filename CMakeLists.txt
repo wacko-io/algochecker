@@ -6,23 +6,30 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-add_library(static_analyzer_lib
+add_library(algochecker
+    src/algochecker/analyzer.cpp
     src/static_analyzer/file_loader.cpp
     src/static_analyzer/lexer.cpp
     src/static_analyzer/parser.cpp
     src/static_analyzer/complexity_evaluator.cpp
 )
 
-target_include_directories(static_analyzer_lib PUBLIC include)
+target_include_directories(algochecker PUBLIC include)
 
-add_executable(algochecker
-    src/main.cpp
-    src/dynamic_analyzer/data_generator.cpp
-    src/dynamic_analyzer/benchmarker.cpp
-    src/dynamic_analyzer/exporter.cpp
-    src/dynamic_analyzer/visualizer.cpp
+add_library(algochecker_web
     src/web_server/server.cpp
 )
 
-target_include_directories(algochecker PRIVATE include)
-target_link_libraries(algochecker PRIVATE static_analyzer_lib)
+target_include_directories(algochecker_web PUBLIC include)
+target_link_libraries(algochecker_web PUBLIC algochecker)
+
+enable_testing()
+
+add_executable(algochecker_tests
+    tests/analyzer_api_test.cpp
+)
+
+target_include_directories(algochecker_tests PRIVATE include)
+target_link_libraries(algochecker_tests PRIVATE algochecker)
+
+add_test(NAME algochecker_tests COMMAND algochecker_tests)
